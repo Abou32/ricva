@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NGX_SPINNER_SERVICE } from 'src/app/components/ngx-spinner.service';
 import { LOADING } from 'src/app/components/utils';
+import { AccountService } from 'src/app/controllers/account.service';
 import { EntrepotService } from 'src/app/controllers/entrepot.service';
 
 @Component({
@@ -13,15 +14,30 @@ import { EntrepotService } from 'src/app/controllers/entrepot.service';
 })
 export class EntrepotNewComponent implements OnInit {
 saveForm:FormGroup
-  constructor(private spinner:NGX_SPINNER_SERVICE,private router:Router,private toastr:ToastrService,private formBuilder:FormBuilder,private entrepotService: EntrepotService) {
+V_User:any
+  constructor(private accountService:AccountService,private spinner:NGX_SPINNER_SERVICE,private router:Router,private toastr:ToastrService,private formBuilder:FormBuilder,private entrepotService: EntrepotService) {
     this.initForm()
    }
 
   ngOnInit(): void {
+    this.accountService.O_UserSession.subscribe((res) => {
+      if(res != null)
+      {
+        this.V_User = res;
+
+      }else{
+        let data =  localStorage.getItem('userInfo')
+        this.V_User = JSON.parse(data)
+        console.log(this.V_User)
+
+      }
+    });
   }
 
   F_saveEntrepot()
   {
+    this.saveForm.controls['userId'].setValue(this.V_User.id)
+
      LOADING(this.spinner,'Chargement').then(load=>{
     if(this.saveForm.valid)
     {
@@ -63,7 +79,7 @@ saveForm:FormGroup
       longitude: [0, Validators.required],
       latitude: [0, Validators.required],
       placer: ['', Validators.required],
-      userId:[0, Validators.required]
+      userId:['', Validators.required]
     })
   }
 }

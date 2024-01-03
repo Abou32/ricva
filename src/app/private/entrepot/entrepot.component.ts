@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NGX_SPINNER_SERVICE } from 'src/app/components/ngx-spinner.service';
+import { AccountService } from 'src/app/controllers/account.service';
 @Component({
   selector: 'app-entrepot',
   templateUrl: './entrepot.component.html',
@@ -22,7 +23,8 @@ export class EntrepotComponent implements OnInit, OnDestroy {
   inter:any
   saveForm:FormGroup
   staticForm:FormGroup
-  constructor(private spinner:NGX_SPINNER_SERVICE,private formBuilder:FormBuilder,private router:Router,private toastr:ToastrService,private entrepotService: EntrepotService) {
+  V_User:any
+  constructor(private accountService:AccountService,private spinner:NGX_SPINNER_SERVICE,private formBuilder:FormBuilder,private router:Router,private toastr:ToastrService,private entrepotService: EntrepotService) {
     this.initForm()
   }
 
@@ -32,8 +34,19 @@ export class EntrepotComponent implements OnInit, OnDestroy {
         pagingType: 'simple_numbers',
         lengthChange:false,
     }
-  
-    this.F_getEntrepot();
+    this.accountService.O_UserSession.subscribe((res) => {
+      if(res != null)
+      {
+        this.V_User = res;
+
+      }else{
+        let data =  localStorage.getItem('userInfo')
+        this.V_User = JSON.parse(data)
+        console.log(this.V_User)
+
+      }
+    });
+    this.F_getEntrepot(this.V_User.id);
   }
   F_selectedData(data){
   this.inter = data
@@ -50,7 +63,7 @@ export class EntrepotComponent implements OnInit, OnDestroy {
         this.entrepotService.F_deleteEntrepot(id).then(res=>{
           if (res.statut == 200)
           {
-            this.F_getEntrepot();
+            this.F_getEntrepot(this.V_User.id);
             this.toastr.success('Suppression effectuée.','Succès', {
               timeOut: 5000,
               progressAnimation:'increasing'
@@ -84,7 +97,7 @@ export class EntrepotComponent implements OnInit, OnDestroy {
             load.dismiss()
             if (res.statut == 200)
             {
-              this.F_getEntrepot();
+              this.F_getEntrepot(this.V_User.id);
               this.toastr.success('Modification effectuée.','Succès', {
                 timeOut: 5000,
                 progressAnimation:'increasing'
@@ -110,21 +123,12 @@ export class EntrepotComponent implements OnInit, OnDestroy {
    
   }
  
-  F_getEntrepot() {
+  F_getEntrepot(id:string) {
     LOADING(this.spinner,'Chargement').then(load=>{
       load.present()
-      this.entrepotService.F_getEntrepot().then((res) => {
+      this.entrepotService.F_getEntrepot(id).then((res) => {
         load.dismiss()
         this.V_Entrepot = res;
-        // const table = $('#dtBasicExample').DataTable({
-        //   data: this.V_Entrepot,
-        //   columns: [
-        //     { data: 'libelle' },
-        //     { data: 'superficie' },
-        //     { data: 'placer' },
-        //     // Autres colonnes
-        //   ]
-        // });
         this.initializeDataTable()
         console.log(res);
       });

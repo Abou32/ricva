@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { collection, getDocs, addDoc, Firestore, DocumentReference, CollectionReference, deleteDoc, doc, updateDoc } from '@angular/fire/firestore';
+import { collection, getDocs, addDoc, Firestore, DocumentReference, CollectionReference, deleteDoc, doc, updateDoc, query, where } from '@angular/fire/firestore';
 import { Entrepot } from '../models/entrepot';
 @Injectable({
   providedIn: 'root'
@@ -77,9 +77,12 @@ export class EntrepotService {
     }
   }
 
-  async F_getEntrepot(): Promise<any> {
+  async F_getEntrepot(data): Promise<any> {
     try {
-      const querySnapshot = await getDocs(collection(this.firestore, 'Entrepot'));
+      const collectionRef = collection(this.firestore, 'Entrepot');
+      const queryS = query(collectionRef, where('userId', '==', data));
+
+      const querySnapshot = await getDocs(queryS);
       const res = querySnapshot.docs.map(doc => ({ 
         id: doc.id, ...doc.data() 
       }));
