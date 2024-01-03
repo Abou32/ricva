@@ -1,0 +1,63 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="row mx-2">
+        <button class="btn btn-ouline-primary mx-1 item col position-relative">
+          Cajou
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+          >
+            <i class="fas fa-check"></i>
+          </span>
+        </button>
+        <button class="btn btn-ouline-primary mx-1 item col">Cacao</button>
+        <button class="btn btn-ouline-primary mx-1 item col">Hévéa</button>
+        <button class="btn btn-ouline-primary mx-1 item col">Karité</button>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <button class="m-2 btn notif px-2">
+        <i class="fas fa-bell text-light"></i
+        ><span class="mx-1 text-light">12</span>
+      </button>
+      <!-- Notifications -->
+      <div class="dropdown mx-4">
+        <button class="d-flex align-items-center btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="assets/img/fr.png" alt="" class="flag mx-2">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item"><img src="assets/img/fr.png" alt="" class="flag mx-2">Français</a></li>
+            <li><a class="dropdown-item"><img src="assets/img/eng.png" alt="" class="flag mx-2">Anglais</a></li>
+        </ul>
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown mx-4 bg-white shadow-sm">
+        <button class=" d-flex align-items-center btn dropdown-toggle p-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded mx-1" height="25" alt="Black and White Portrait of a Man" /> <label>{{V_User.prenom}} {{ V_User.nom}}</label></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" routerLink="../login" role="button" (click)="F_logOut()">Déconnexion</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

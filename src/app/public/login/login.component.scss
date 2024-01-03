@@ -1,0 +1,37 @@
+.landing {
+  background-image: url("../../../../src/assets/img/landing.jpg");
+  background-size: cover;
+}
+.item {
+  font-size: 11px;
+  color: gray;
+  font-weight: bold;
+  border-radius: 2rem;
+}
+label {
+  color: gray;
+}
+.small{
+  font-size: 12px;
+}
+.text-bloc{
+  position:absolute;
+ top: 20rem;
+ left: 8rem;
+}
+h1{
+  line-height: 0.8;
+  font-size: 3.5rem;
+}
+.badge{
+  display: flex;
+  align-items: center;
+width: 20px;
+height: 20px;
+}
+.passwordInput{
+  border: none;
+}
+*:focus {
+  outline: none;
+}

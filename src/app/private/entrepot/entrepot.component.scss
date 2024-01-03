@@ -1,0 +1,39 @@
+.container-fluid{
+  height: auto;
+  padding: 0;
+}
+.card{
+    height: 100%;
+}
+.form,.searchInput{
+    border: none;
+    background-color: var(--bs-color-primary-shade);
+}
+#dtBasicExample_filter{
+  display: none !important;
+}
+  .searchInput{
+    border: none;
+  }
+  *:focus {
+    outline: none;
+  }
+  thead tr{
+    background-color: var(--bs-color-primary-contrast) !important;
+  }
+  thead {
+    border-radius: 8px !important;
+  }
+  tbody .odd{
+    background-color: rgba(255, 249, 238, 0.264) !important;
+  }
+  tr{
+    height: 3rem;
+  }
+  .table{
+    --bs-table-bg:none!important;
+  }
+  th{
+    padding: 12px;
+  }
+  

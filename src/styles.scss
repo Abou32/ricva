@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+
+//Bouttons
+.btn-primary{
+    border: none;
+    background-color: var(--bs-color-primary) !important;
+}
+.btn-primary-contrast{
+    border: none;
+    background-color: var(--bs-color-primary-contrast) !important;
+    color: var(--bs-color-primary) !important;;
+}
+.btn-ouline-primary{
+    border-color: var(--bs-color-primary) !important;;
+}
+
+
+
+//Typographie
+.text-primary{
+    color: var(--bs-color-primary) !important;
+}
+
+
+//Component
+.card{
+    border: none;
+    box-shadow: 0px 0px 5px -31px rgba(0,0,0,0.1) !important;
+}
+
+//swal
+.swal2-popup{
+    border-radius: 1rem;
+}
+.swal2-title{
+    margin-top: 1.3rem;
+    color: var(--bs-color-primary) !important;
+    font-size: 1rem;
+}
+.swal2-close{
+    margin: 5px;
+    border-radius: 50%;
+    color: var(--bs-color-primary) !important;
+    background-color: var(--bs-color-primary-shade) !important;
+}
+.swal2-deny{
+    width: 85px;
+    margin-bottom: 2rem;
+    color: var(--bs-color-primary) !important;
+    background-color: var(--bs-color-primary-shade) !important;
+}
+.swal2-confirm{
+    width: 85px;
+    margin-bottom: 2rem;
+    color: white !important;
+    background-color: var(--bs-color-primary) !important;
+}
+.swal2-html-container{
+    font-size: 1rem !important;
+    color: rgb(199, 199, 199) !important;
+}
+
+//toast
+.toast-container .ngx-toastr {
+    text-align: center;
+    width: 400px !important;
+    border-radius: 20px 20px 20px 20px !important;
+    min-height: 80px !important;
+  }

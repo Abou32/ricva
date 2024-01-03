@@ -1,0 +1,19 @@
+.item {
+    font-size: 11px;
+    color: gray;
+    font-weight: bold;
+    border-radius: 2rem;
+  }
+  .badge{
+    display: flex;
+    align-items: center;
+  width: 20px;
+  height: 20px;
+  }
+  .notif{
+    box-shadow: 17px 18px 15px -2px rgba(22, 166, 255, 0.1);
+    background-color: #1574be;
+  }
+  .flag{
+    width: 40px;
+  }

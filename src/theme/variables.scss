@@ -1,0 +1,80 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --bs-color-primary: #d18559;
+  --bs-color-primary-rgb: 56, 128, 255;
+  --bs-color-primary-contrast: #f1e4dc;
+  --bs-color-primary-contrast-rgb: 255, 255, 255;
+  --bs-color-primary-shade: #fcf7f2;
+  --bs-color-primary-tint: #4c8dff;
+
+
+  /** secondary **/
+  --bs-color-secondary: #F77F00;
+  --bs-color-secondary-rgb: 61, 194, 255;
+  --bs-color-secondary-contrast: #ffffff;
+  --bs-color-secondary-contrast-rgb: 255, 255, 255;
+  --bs-color-secondary-shade: #ffb86c;
+  --bs-color-secondary-tint: #50c8ff;
+
+  /** tertiary **/
+  --bs-color-tertiary: #5260ff;
+  --bs-color-tertiary-rgb: 82, 96, 255;
+  --bs-color-tertiary-contrast: #ffffff;
+  --bs-color-tertiary-contrast-rgb: 255, 255, 255;
+  --bs-color-tertiary-shade: #4854e0;
+  --bs-color-tertiary-tint: #6370ff;
+
+  /** success **/
+  --bs-color-success: #2dd36f;
+  --bs-color-success-rgb: 45, 211, 111;
+  --bs-color-success-contrast: #ffffff;
+  --bs-color-success-contrast-rgb: 255, 255, 255;
+  --bs-color-success-shade: #28ba62;
+  --bs-color-success-tint: #42d77d;
+
+  /** warning **/
+  --bs-color-warning: #ffc409;
+  --bs-color-warning-rgb: 255, 196, 9;
+  --bs-color-warning-contrast: #000000;
+  --bs-color-warning-contrast-rgb: 0, 0, 0;
+  --bs-color-warning-shade: #e0ac08;
+  --bs-color-warning-tint: #ffca22;
+
+  /** danger **/
+  --bs-color-danger: #eb445a;
+  --bs-color-danger-rgb: 235, 68, 90;
+  --bs-color-danger-contrast: #ffffff;
+  --bs-color-danger-contrast-rgb: 255, 255, 255;
+  --bs-color-danger-shade: #cf3c4f;
+  --bs-color-danger-tint: #ed576b;
+
+  /** dark **/
+  --bs-color-dark: #222428;
+  --bs-color-dark-rgb: 34, 36, 40;
+  --bs-color-dark-contrast: #ffffff;
+  --bs-color-dark-contrast-rgb: 255, 255, 255;
+  --bs-color-dark-shade: #1e2023;
+  --bs-color-dark-tint: #383a3e;
+
+  /** medium **/
+  --bs-color-medium: #92949c;
+  --bs-color-medium-rgb: 146, 148, 156;
+  --bs-color-medium-contrast: #ffffff;
+  --bs-color-medium-contrast-rgb: 255, 255, 255;
+  --bs-color-medium-shade: #808289;
+  --bs-color-medium-tint: #9d9fa6;
+
+  /** light **/
+  --bs-color-light: #f4f5f8;
+  --bs-color-light-rgb: 244, 245, 248;
+  --bs-color-light-contrast: #000000;
+  --bs-color-light-contrast-rgb: 0, 0, 0;
+  --bs-color-light-shade: #d7d8da;
+  --bs-color-light-tint: #f5f6f9;
+}
+
+

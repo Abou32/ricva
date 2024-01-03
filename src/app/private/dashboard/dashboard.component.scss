@@ -1,0 +1,24 @@
+.container-fluid{
+    background-color: #fafafb;
+    height: 100%;
+}
+.side{
+    background-color: #f0f0f0;
+    border-radius: 13px;
+    margin: 1rem;
+}
+.breadcrumb-item{
+    font-size: 12px;
+}
+.nav-item .active{
+    background-color: var(--bs-color-primary-contrast) !important;
+}
+.nav-item .active span{
+    color: var(--bs-color-primary) !important;
+}
+.nav-item span{
+   font-size: 14px;
+}
+.nav-item{
+    margin-top: 5px;
+}

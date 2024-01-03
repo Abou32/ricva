@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-end my-2 mx-3">
+    <button
+      class="col-2 btn backBtn d-flex justify-content-between align-items-center p-2"
+      [routerLink]="['../entrepot']"
+    >
+      <i class="text-start fa-solid fa-chevron-left"></i>Précedent
+    </button>
+  </div>
+  <div class="card p-3">
+    <div class="row d-flex justify-content-start">
+      <label class="col-9 text-primary fs-5 fw-bold">Créer un entrepot</label>
+    </div>
+    <div class="row my-5">
+      <form [formGroup]="saveForm" style="width: 100%">
+        <div class="row mb-3">
+          <div class="form-outline col-md-6 col-xs-12">
+            <label class="form-label text-muted" for="form2Example18" 
+              >Libellé</label
+            >
+            <input
+              type="text"
+              id="form2Example18"
+              formControlName="libelle"
+              class="form-control form-control-lg"
+            />
+          </div>
+          <div class="form-outline col-md-6 col-xs-12">
+            <label class="form-label text-muted" for="form2Example18"
+              >Longitude</label
+            >
+            <input
+              type="number"
+              id="form2Example18"
+              formControlName="longitude"
+              class="form-control form-control-lg"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="form-outline col-md-6 col-xs-12">
+            <label class="form-label text-muted" for="form2Example18"
+              >Superficie (m2)</label
+            >
+            <input
+            type="number"
+              id="form2Example18"
+              formControlName="superficie"
+              class="form-control form-control-lg"
+            />
+          </div>
+          <div class="form-outline col-md-6 col-xs-12">
+            <label class="form-label text-muted" for="form2Example18"
+              >Latitude</label
+            >
+            <input
+            type="number"
+              id="form2Example18"
+              formControlName="latitude"
+              class="form-control form-control-lg"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="form-outline col-md-6 col-xs-12">
+            <label class="form-label text-muted" for="form2Example18"
+              >Placer</label
+            >
+            <input
+              type="text"
+              id="form2Example18"
+              formControlName="placer"
+              class="form-control form-control-lg"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class=" mt-4 d-flex justify-content-between">
+      <button class="col-2 btn backBtn p-2" [routerLink]="['../entrepot']">
+        Annuler
+      </button>
+      <button class="col-2 btn btn-primary p-2" (click)="F_saveEntrepot()">Enregistrer</button>
+    </div>
+  </div>
+</div>
